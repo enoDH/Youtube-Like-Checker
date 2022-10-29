@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PackageIcon>favicon.ico</PackageIcon>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="IMG\**" />
+    <EmbeddedResource Remove="IMG\**" />
+    <None Remove="IMG\**" />
+    <Page Remove="IMG\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\like_2.png" />
+    <None Remove="Resources\like_3.png" />
+    <None Remove="Resources\like_5.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\favicon.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="YoutubeExplode" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\like_1.png" />
+    <Resource Include="Resources\like_2.png" />
+    <Resource Include="Resources\like_3.png" />
+    <Resource Include="Resources\like_4.png" />
+    <Resource Include="Resources\like_5.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\like_1.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Resources\like_4.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

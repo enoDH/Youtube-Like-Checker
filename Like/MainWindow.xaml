@@ -1,0 +1,106 @@
+﻿<Window x:Class="Like.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Like"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="Like" 
+        Height="36px" 
+        Width="400px" 
+        WindowStyle="None"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="Transparent">
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Add link" Click="MenuItem_Click_AddLink"/>
+                <MenuItem Header="Edit">
+                    <Menu>
+                        <Menu.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </Menu.ItemsPanel>
+                        <MenuItem Header="Image">
+                            <Menu>
+                                <Menu.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical"/>
+                                    </ItemsPanelTemplate>
+                                </Menu.ItemsPanel>
+                                <MenuItem x:Name="DarkLike" Header="Dark Like" Click="DarkLike_Click"/>
+                                <MenuItem x:Name="RedHeartLike" Header="Red Heart Like" Click="RedHeartLike_Click"/>
+                                <MenuItem x:Name="BlueLike" Header="Blue Like" Click="BlueLike_Click"/>
+                                <MenuItem x:Name="DarkHeartLike" Header="Dark Heart Like" Click="DarkHeartLike_Click"/>
+                                <MenuItem x:Name="PinkLike" Header="Pink Like" Click="PinkLike_Click"/>
+                            </Menu>
+                        </MenuItem>
+                        <MenuItem Header="Text">
+                            <Menu>
+                                <Menu.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical"/>
+                                    </ItemsPanelTemplate>
+                                </Menu.ItemsPanel>
+                                <MenuItem Header="Size">
+                                    <Menu>
+                                        <Menu.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Vertical"/>
+                                            </ItemsPanelTemplate>
+                                        </Menu.ItemsPanel>
+                                        <MenuItem x:Name="FontLowSize" Header="low" Click="FontLowSize_Click"/>
+                                        <MenuItem x:Name="FontMiddleSize" Header="middle" Click="FontMiddleSize_Click"/>
+                                        <MenuItem x:Name="FontLargeSize" Header="large" Click="FontLargeSize_Click"/>
+                                    </Menu>
+                                </MenuItem>
+                                <MenuItem Header="Color">
+                                    <Menu>
+                                        <Menu.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Vertical"/>
+                                            </ItemsPanelTemplate>
+                                        </Menu.ItemsPanel>
+                                        <MenuItem x:Name="FontColorPink" Header="Pink" Click="FontColorPink_Click"/>
+                                        <MenuItem x:Name="FontColorRed" Header="Red" Click="FontColorRed_Click"/>
+                                        <MenuItem x:Name="FontColorBlack" Header="Black" Click="FontColorBlack_Click"/>
+                                        <MenuItem x:Name="FontColorWhite" Header="White" Click="FontColorWhite_Click"/>
+                                    </Menu>
+                                </MenuItem>
+                            </Menu>
+                        </MenuItem>
+                    </Menu>
+                </MenuItem>
+                <MenuItem Header="Save" Click="MenuItem_Click_Save" />
+                <MenuItem Header="Exit" Click="MenuItem_Click" />
+            </ContextMenu>
+        </Grid.ContextMenu>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Image
+            x:Name="LikeImage"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Source="Resources/like_5.png"/>
+
+        <TextBlock
+            x:Name="TextCountLikes"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Grid.Column="1"
+            Text="Like"
+            FontSize="36"
+            Margin="4 0 0 0"
+            FontWeight="Bold"/>
+    </Grid>
+</Window>
